@@ -1,0 +1,42 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+  @include mobile { padding-top: 64px; padding-bottom: 64px; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  @include mobile { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  opacity: 0.9;
+  img { object-fit: cover; }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, $color-bg 2%, rgba(237, 228, 219, 0) 50%);
+  }
+}
+
+.name {
+  position: relative;
+  margin-top: -64px;
+}
+
+.role {
+  position: relative;
+  margin: 8px 0 17px;
+  color: $color-accent;
+  font-size: 14px;
+  line-height: 22.4px;
+}

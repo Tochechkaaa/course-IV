@@ -1,0 +1,40 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.section {
+  padding: 110px 0;
+  background: $color-accent;
+  @include mobile { padding: 56px 0; }
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 463px);
+  gap: 40px;
+  padding: 74px 72px;
+  background: $color-bg;
+  @media (max-width: 1200px) { grid-template-columns: 1fr minmax(0, 340px); padding-inline: 40px; }
+  @include mobile { grid-template-columns: 1fr; gap: 34px; padding: 30px 28px 28px; }
+}
+
+.label.label { color: $color-brown; }
+.heading.heading { margin-bottom: 18px; }
+.text { max-width: 520px; }
+.buy { padding-top: 10px; @include mobile { padding-top: 0; } }
+
+.caption {
+  font-family: $font-display;
+  font-size: 12px;
+  line-height: 13.44px;
+  letter-spacing: 1.68px;
+  text-transform: uppercase;
+}
+
+.price {
+  margin: 14px 0 21px;
+  font-family: $font-display;
+  font-size: clamp(36px, 3.9vw, 56px);
+  line-height: 1.23;
+  white-space: nowrap;
+  @include mobile { margin: 6px 0 30px; font-size: 30px; }
+}

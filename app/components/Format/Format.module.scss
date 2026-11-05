@@ -1,0 +1,37 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+  @include mobile { padding-top: 64px; padding-bottom: 64px; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  @include mobile { grid-template-columns: repeat(2, 1fr); }
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 170px;
+    padding: 26px 20px;
+    background: rgba(214, 142, 120, 0.22);
+    @include mobile { height: 130px; }
+  }
+  dt {
+    font-size: 12px;
+    line-height: 19.2px;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  dd {
+    font-family: $font-display;
+    font-size: clamp(20px, 1.95vw, 28px);
+    line-height: 1.23;
+    @include mobile { font-size: 20px; }
+  }
+}

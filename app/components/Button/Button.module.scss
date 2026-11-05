@@ -1,0 +1,27 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+  padding-inline: 48px;
+  border-radius: 2px;
+  background: $color-accent;
+  color: $color-brown;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+  &:hover { background: #e0a18d; }
+  @include mobile { width: 100%; height: 64px; }
+}
+
+.button.small {
+  width: auto;
+  height: 41px;
+  padding-inline: 22px;
+  font-size: 14px;
+}

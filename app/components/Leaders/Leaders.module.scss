@@ -1,0 +1,61 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.section {
+  padding: 74px 0 99px;
+  background: $color-brown;
+  color: $color-bg;
+  @include mobile { padding: 66px 0 64px; }
+}
+
+.heading.heading { margin-bottom: 35px; @include mobile { margin-bottom: 55px; } }
+
+.photo {
+  position: relative;
+  width: min(680px, 100%);
+  aspect-ratio: 1296 / 555.42;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  img { object-fit: cover; object-position: 50% 35%; }
+  @include mobile { display: none; }
+}
+
+// На десктопі порядок із макета: Крижановська ліворуч, Чекальська праворуч.
+.people {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 24px;
+  padding-inline: 80px 107px;
+  @media (max-width: 1200px) { padding-inline: 0; }
+  @include mobile { flex-direction: column; gap: 27px; }
+}
+
+.person { @include mobile { display: flex; gap: 18px; } }
+
+.portrait {
+  display: none;
+  position: relative;
+  flex: 0 0 130px;
+  height: 173.33px;
+  overflow: hidden;
+  opacity: 0.9;
+  img { object-fit: cover; }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(86, 30, 18, 0) 50%, $color-brown);
+  }
+  @include mobile { display: block; }
+}
+
+.role {
+  margin: 9px 0 6px;
+  color: $color-accent;
+  font-size: 14px;
+  line-height: 22.4px;
+  @include mobile { margin-bottom: 14px; }
+}
+
+.duty { opacity: 0.8; }

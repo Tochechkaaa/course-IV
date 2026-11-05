@@ -1,0 +1,66 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.list { border-bottom: 1px solid $color-brown; }
+.item { border-top: 1px solid $color-brown; }
+
+.trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100.8px;
+  text-align: left;
+  .plain & { min-height: 92.8px; }
+}
+
+.number {
+  flex: 0 0 82px;
+  color: $color-accent;
+  font-family: $font-display;
+  font-size: 22px;
+  font-weight: 300;
+  @include mobile { flex-basis: 54px; }
+}
+
+.title {
+  flex: 1;
+  padding-right: 16px;
+  font-family: $font-display;
+  font-size: 21px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  @include mobile { font-size: 16px; }
+  .plain & {
+    font-family: $font-body;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 0;
+    @include mobile { font-size: 16px; }
+  }
+}
+
+.icon {
+  font-size: 28px;
+  line-height: 44.8px;
+  transition: transform 0.25s;
+}
+.iconOpen { transform: rotate(45deg); }
+
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.25s, visibility 0.25s;
+}
+.panelOpen { grid-template-rows: 1fr; visibility: visible; }
+.panelInner { overflow: hidden; }
+
+.text {
+  max-width: 678px;
+  padding-bottom: 33px;
+  .numbered & {
+    padding-left: 82px;
+    max-width: 760px;
+    @include mobile { padding-left: 54px; }
+  }
+}

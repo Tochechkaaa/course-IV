@@ -1,0 +1,58 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 10;
+  border-bottom: 1px solid $color-line;
+  background: rgba(237, 228, 219, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.brand {
+  display: block;
+  small {
+    display: block;
+    margin-top: 4px;
+    font-size: 9px;
+    line-height: 11px;
+    letter-spacing: 1.8px;
+    opacity: 0.6;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 27.6px;
+  font-size: 14px;
+  @include mobile { display: none; }
+}
+
+.toggle {
+  display: none;
+  height: 34px;
+  padding-inline: 15px;
+  border: 1px solid $color-brown;
+  font-size: 13px;
+  font-weight: 500;
+  @include mobile { display: block; }
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 20px 28px;
+  border-top: 1px solid $color-line;
+  font-size: 18px;
+  @include mobile { display: flex; }
+}

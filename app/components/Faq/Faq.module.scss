@@ -1,0 +1,15 @@
+@use "mixins" as *;
+
+.section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+  @include mobile { padding-top: 64px; padding-bottom: 64px; }
+}
+
+.center { text-align: center; }
+.heading.heading { margin-bottom: 48px; }
+
+.list {
+  max-width: 900px;
+  margin-inline: auto;
+}

@@ -1,0 +1,23 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.footer {
+  border-top: 1px solid rgba(237, 228, 219, 0.2);
+  background: $color-brown;
+  color: rgba(237, 228, 219, 0.6);
+  font-size: 13px;
+  line-height: 20.8px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 82px;
+  @include mobile {
+    flex-wrap: wrap;
+    gap: 8px 0;
+    padding-block: 29px 28px;
+    p:last-child { width: 100%; }
+  }
+}

@@ -1,0 +1,47 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.section {
+  padding: 142px 0 140px;
+  background: rgba(214, 142, 120, 0.18);
+  @include mobile { padding: 66px 0; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid $color-line;
+  @include mobile { grid-template-columns: 1fr; }
+  li {
+    min-height: 218px;
+    padding: 30px 22px;
+    border-right: 1px solid $color-line;
+    &:last-child { border-right: 0; }
+    @include mobile {
+      min-height: 0;
+      padding-bottom: 44px;
+      border-right: 0;
+      border-bottom: 1px solid $color-line;
+      &:last-child { border-bottom: 0; }
+    }
+  }
+  span {
+    color: $color-accent;
+    font-family: $font-display;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  p {
+    margin-top: 58px;
+    font-size: 15px;
+    line-height: 24px;
+    @include mobile { margin-top: 22px; }
+  }
+}
+
+.note {
+  margin-top: 24px;
+  font-size: 13px;
+  line-height: 20.8px;
+  opacity: 0.65;
+}
